@@ -439,6 +439,25 @@ footer p {
   .hero-image-container {
     width: 280px;
   }
+   /* FORCE CIRCULAR PROFILE PHOTO */
+
+.hero-image-container {
+  width: 320px !important;
+  height: 320px !important;
+  flex: 0 0 320px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.hero-image-container .hero-image {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 50% !important;
+  border: 3px solid #E7B95B !important;
+}
 
   .hero-image {
     width: 280px;
