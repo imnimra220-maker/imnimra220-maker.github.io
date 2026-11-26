@@ -1,10 +1,10 @@
 
 /* =========================================
    NIMRA ZAHEER - PORTFOLIO
-   Main stylesheet
+   Complete Main Stylesheet
    ========================================= */
 
-/* 1. Base settings */
+/* 1. Base Settings */
 
 :root {
   --background: #101014;
@@ -115,16 +115,17 @@ nav {
   color: var(--accent);
 }
 
-/* 3. Hero section */
+/* 3. Hero Section */
 
 .hero {
   min-height: 78vh;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   position: relative;
 }
 
@@ -143,6 +144,13 @@ nav {
   pointer-events: none;
 }
 
+.hero-content {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
 .eyebrow {
   color: var(--accent);
   font-size: 0.78rem;
@@ -152,8 +160,8 @@ nav {
 }
 
 .hero h1 {
-  max-width: 900px;
-  font-size: clamp(3rem, 8vw, 6.8rem);
+  max-width: 700px;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
   font-weight: 800;
   margin-bottom: 28px;
 }
@@ -168,7 +176,33 @@ nav {
   margin-bottom: 36px;
 }
 
-/* 4. Buttons */
+/* 4. Hero Portrait */
+
+.hero-image-container {
+  flex: 0 0 340px;
+  width: 340px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 24px;
+  border: 1px solid rgba(231, 185, 91, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* 5. Hero Buttons */
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
 
 .button {
   display: inline-flex;
@@ -191,7 +225,36 @@ nav {
   transform: translateY(-3px);
 }
 
-/* 5. About section */
+.hero-buttons .button:nth-child(2) {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.hero-buttons .button:nth-child(2):hover {
+  background: var(--accent);
+  color: #17130b;
+}
+
+/* 6. Social Links */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--accent);
+}
+
+/* 7. About Section */
 
 #about {
   border-top: 1px solid var(--border);
@@ -202,7 +265,7 @@ nav {
   font-size: 1.1rem;
 }
 
-/* 6. Work section */
+/* 8. Work Section */
 
 #work {
   border-top: 1px solid var(--border);
@@ -212,7 +275,7 @@ nav {
   max-width: 650px;
 }
 
-/* 7. Services section */
+/* 9. Services Section */
 
 #services {
   border-top: 1px solid var(--border);
@@ -223,7 +286,7 @@ nav {
   font-size: 1.1rem;
 }
 
-/* 8. Contact section */
+/* 10. Contact Section */
 
 #contact {
   border-top: 1px solid var(--border);
@@ -242,7 +305,7 @@ nav {
   font-weight: 700;
 }
 
-/* 9. Footer */
+/* 11. Footer */
 
 footer {
   border-top: 1px solid var(--border);
@@ -254,7 +317,28 @@ footer p {
   font-size: 0.85rem;
 }
 
-/* 10. Responsive layout */
+/* 12. Tablet Responsive */
+
+@media (max-width: 900px) {
+  .hero {
+    gap: 35px;
+  }
+
+  .hero-image-container {
+    flex-basis: 280px;
+    width: 280px;
+  }
+
+  .hero-image {
+    height: 360px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 6vw, 4.5rem);
+  }
+}
+
+/* 13. Mobile Responsive */
 
 @media (max-width: 768px) {
   section {
@@ -281,12 +365,29 @@ footer p {
 
   .hero {
     min-height: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    gap: 40px;
+  }
+
+  .hero-content {
+    width: 100%;
   }
 
   .hero h1 {
     font-size: clamp(2.7rem, 12vw, 4.5rem);
+  }
+
+  .hero-image-container {
+    width: min(100%, 360px);
+    flex: none;
+    align-self: center;
+  }
+
+  .hero-image {
+    height: 420px;
   }
 
   .hero::before {
@@ -300,6 +401,8 @@ footer p {
     padding-bottom: 90px;
   }
 }
+
+/* 14. Small Mobile */
 
 @media (max-width: 420px) {
   section {
@@ -322,7 +425,15 @@ footer p {
     font-size: 2.6rem;
   }
 
-  .button {
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .button {
     width: 100%;
+  }
+
+  .hero-image {
+    height: 360px;
   }
 }
