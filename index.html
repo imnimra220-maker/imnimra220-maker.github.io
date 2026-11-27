@@ -343,6 +343,91 @@
       }
     }
 
+
+    /* Logo Design Showcase */
+    .logo-showcase {
+      margin-top: 90px;
+      padding-top: 70px;
+      border-top: 1px solid var(--border);
+    }
+
+    .logo-showcase-heading {
+      margin-bottom: 32px;
+    }
+
+    .logo-showcase-heading h3 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 14px;
+    }
+
+    .logo-showcase-heading p {
+      max-width: 650px;
+    }
+
+    .logo-design-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .logo-design-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .logo-design-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(231, 185, 91, 0.65);
+    }
+
+    .logo-design-artwork {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      padding: 28px;
+      background: #22222a;
+    }
+
+    .logo-design-artwork img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Logo 4: Psycho Speech Center has a white artwork background */
+    .logo-design-card.logo-psycho .logo-design-artwork {
+      background: #ffffff;
+    }
+
+    .logo-design-caption {
+      padding: 16px 18px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .logo-design-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .logo-design-artwork {
+        padding: 18px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .logo-design-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Responsive */
 
     @media (max-width: 900px) {
@@ -833,6 +918,55 @@
         </div>
 
       </a>
+
+      <!-- LOGO DESIGN SHOWCASE -->
+      <div class="logo-showcase" id="logo-design">
+        <div class="logo-showcase-heading">
+          <span class="project-category">SELECTED LOGO WORK</span>
+          <h3>Logo Design</h3>
+          <p>
+            A collection of logo concepts created for different brands,
+            each with its own visual direction and identity.
+          </p>
+        </div>
+
+        <div class="logo-design-grid">
+          <article class="logo-design-card">
+            <div class="logo-design-artwork">
+              <img src="assets/projects/logo-design/logo-01.jpeg" alt="Logo design 1" loading="lazy">
+            </div>
+            <div class="logo-design-caption">Logo 01</div>
+          </article>
+
+          <article class="logo-design-card">
+            <div class="logo-design-artwork">
+              <img src="assets/projects/logo-design/logo-02.png" alt="Logo design 2" loading="lazy">
+            </div>
+            <div class="logo-design-caption">Logo 02</div>
+          </article>
+
+          <article class="logo-design-card">
+            <div class="logo-design-artwork">
+              <img src="assets/projects/logo-design/logo-03.png" alt="Logo design 3" loading="lazy">
+            </div>
+            <div class="logo-design-caption">Logo 03</div>
+          </article>
+
+          <article class="logo-design-card logo-psycho">
+            <div class="logo-design-artwork">
+              <img src="assets/projects/logo-design/logo-04.png" alt="Psycho Speech Center logo design" loading="lazy">
+            </div>
+            <div class="logo-design-caption">Psycho Speech Center</div>
+          </article>
+
+          <article class="logo-design-card">
+            <div class="logo-design-artwork">
+              <img src="assets/projects/logo-design/logo-05.png" alt="Logo design 5" loading="lazy">
+            </div>
+            <div class="logo-design-caption">Logo 05</div>
+          </article>
+        </div>
+      </div>
 
     </section>
 
