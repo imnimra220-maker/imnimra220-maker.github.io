@@ -5,130 +5,271 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Nimra Zaheer | Digital Marketing Portfolio</title>
+  <title>Nimra Zaheer | Social Media Manager & Meta Ads Specialist</title>
 
-  <meta name="description" content="Nimra Zaheer's portfolio showcasing digital marketing, social media management, creative design and content creation.">
+  <meta
+    name="description"
+    content="Nimra Zaheer is a Social Media Manager and Meta Ads Specialist with a Master's degree in Computer Science, specializing in social media management, creative design, content creation and digital advertising."
+  >
 
   <link rel="stylesheet" href="style.css">
 
   <style>
-    .project-card {
+    /* =====================================
+       PORTFOLIO CONTENT SECTIONS
+       ===================================== */
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .highlight-text {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* About Me */
+
+    .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 30px;
-      align-items: center;
       margin-top: 35px;
-      padding: 22px;
+    }
+
+    .about-card {
+      padding: 30px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 18px;
-      transition: transform 0.25s ease, border-color 0.25s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
+    .about-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 20px;
     }
 
-    .project-image {
-      overflow: hidden;
-      border-radius: 12px;
+    .degree-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       background: var(--surface-light);
+      border: 1px solid rgba(231, 185, 91, 0.3);
     }
 
-    .project-image img {
-      width: 100%;
-      height: 290px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .project-info {
-      padding: 15px;
-    }
-
-    .project-category {
+    .degree-label {
       color: var(--accent);
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
+      margin-bottom: 15px;
     }
 
-    .project-info h3 {
-      font-size: 1.8rem;
-      margin: 15px 0;
+    .degree-card h3 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
     }
 
-    .project-info p {
-      margin-bottom: 20px;
-      max-width: 450px;
+    .degree-card p {
+      font-size: 0.95rem;
     }
 
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-bottom: 25px;
+    /* Bullet Lists */
+
+    .professional-list {
+      list-style: none;
+      display: grid;
+      gap: 13px;
     }
 
-    .project-tags span {
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 30px;
+    .professional-list li {
+      position: relative;
+      padding-left: 25px;
       color: var(--text-muted);
-      font-size: 0.75rem;
+      line-height: 1.6;
     }
 
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
+    .professional-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
       color: var(--accent);
+      font-weight: 800;
+    }
+
+    /* What I Do */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .service-number {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.8rem;
       font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 20px;
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .skill-card {
+      padding: 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .skill-card h3 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Industries */
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .industry-card {
+      padding: 25px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: border-color 0.25s ease;
+    }
+
+    .industry-card:hover {
+      border-color: var(--accent);
+    }
+
+    .industry-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .industry-card p {
       font-size: 0.9rem;
     }
 
-    .project-link:hover {
-      color: var(--text);
+    /* Featured Healthcare Project */
+
+    .featured-project {
+      margin-top: 35px;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .featured-project h3 {
+      font-size: 1.6rem;
+      margin: 15px 0;
+    }
+
+    .featured-project p {
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 700px) {
-      .project-card {
+      .services-grid,
+      .skills-grid,
+      .industries-grid {
         grid-template-columns: 1fr;
-        padding: 15px;
-        gap: 15px;
       }
 
-      .project-image img {
-        height: 230px;
-      }
-
-      .project-info {
-        padding: 8px;
+      .about-card,
+      .service-card,
+      .skill-card,
+      .industry-card,
+      .featured-project {
+        padding: 22px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- NAVIGATION -->
+
   <header>
     <nav>
       <a href="#" class="logo">NIMRA ZAHEER</a>
+
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#what-i-do">Services</a>
+        <a href="#skills">Skills</a>
         <a href="#work">Work</a>
-        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
+
+    <!-- HERO SECTION -->
+
     <section class="hero">
+
       <div class="hero-content">
+
         <p class="eyebrow">
-          DIGITAL MARKETING · CREATIVE DESIGN
+          SOCIAL MEDIA MANAGEMENT · META ADS · CREATIVE DESIGN
         </p>
 
         <h1>
@@ -137,14 +278,16 @@
         </h1>
 
         <p class="intro">
-          I'm Nimra Zaheer, a digital marketing professional
-          and creative designer helping brands build their
-          online presence through strategy, creativity and
-          meaningful digital experiences.
+          I'm Nimra Zaheer, a Social Media Manager and Meta Ads
+          Specialist with a Master's degree in Computer Science.
+          I help brands grow through creative content, strategic
+          social media management and digital advertising.
         </p>
 
         <div class="hero-buttons">
-          <a class="button" href="#work">Explore My Work</a>
+          <a class="button" href="#work">
+            Explore My Work
+          </a>
 
           <a class="button" href="nimra-zaheer-cv.pdf" download>
             Download CV
@@ -152,6 +295,7 @@
         </div>
 
         <div class="social-links">
+
           <a
             href="https://www.linkedin.com/in/nimra-zaheer-2a7b40285/"
             target="_blank"
@@ -167,7 +311,9 @@
           >
             Instagram
           </a>
+
         </div>
+
       </div>
 
       <div class="hero-image-container">
@@ -177,37 +323,344 @@
           class="hero-image"
         >
       </div>
+
     </section>
+
+
+    <!-- ABOUT ME -->
 
     <section id="about">
+
       <h2>About Me</h2>
-      <p>
-        I work across social media marketing, page setup and
-        management, graphic design, content creation and
-        digital campaigns. I enjoy combining creative ideas
-        with digital strategies to help businesses grow
-        their online presence.
+
+      <p class="section-intro">
+        I'm a Social Media Manager and Meta Ads Specialist
+        with a Master's degree in Computer Science and a
+        passion for helping brands grow through creative
+        and strategic digital marketing.
       </p>
+
+      <p class="section-intro">
+        My work combines technical understanding with
+        creativity, allowing me to approach digital marketing
+        from both a strategic and visual perspective.
+        From managing social media pages and creating engaging
+        content to designing brand visuals, producing reels
+        and running advertising campaigns, I help businesses
+        build a consistent and impactful online presence.
+      </p>
+
+      <div class="about-grid">
+
+        <div class="about-card">
+
+          <h3>My Professional Background</h3>
+
+          <ul class="professional-list">
+            <li>Social Media Management</li>
+            <li>Meta Ads Campaign Management</li>
+            <li>Creative Design & Visual Communication</li>
+            <li>Digital Content Creation</li>
+            <li>Brand-focused Marketing</li>
+          </ul>
+
+        </div>
+
+        <div class="about-card degree-card">
+
+          <span class="degree-label">
+            Academic Background
+          </span>
+
+          <h3>Master's in Computer Science</h3>
+
+          <p>
+            My computer science background adds technical
+            understanding and a structured approach to
+            my creative and digital marketing work.
+          </p>
+
+        </div>
+
+      </div>
+
+    <div class="about-card" style="margin-top: 22px;">
+
+      <h3>My Approach</h3>
+
+      <ul class="professional-list">
+        <li>Creative ideas backed by strategic thinking</li>
+        <li>Consistent and professional brand communication</li>
+        <li>Audience-focused content and visual storytelling</li>
+        <li>Combining technical knowledge with creativity</li>
+      </ul>
+
+    </div>
+
     </section>
 
+
+    <!-- WHAT I DO -->
+
+    <section id="what-i-do">
+
+      <h2>What I Do</h2>
+
+      <p class="section-intro">
+        I help businesses build a strong digital presence
+        through social media management, creative content
+        and targeted advertising.
+      </p>
+
+      <div class="services-grid">
+
+        <!-- SERVICE 1 -->
+
+        <div class="service-card">
+
+          <span class="service-number">01 / MANAGEMENT</span>
+
+          <h3>Social Media Management</h3>
+
+          <ul class="professional-list">
+            <li>Social Media Page Setup</li>
+            <li>Social Media Account Management</li>
+            <li>Content Planning & Scheduling</li>
+            <li>Brand Communication</li>
+            <li>Social Media Content Strategy</li>
+          </ul>
+
+        </div>
+
+        <!-- SERVICE 2 -->
+
+        <div class="service-card">
+
+          <span class="service-number">02 / ADVERTISING</span>
+
+          <h3>Meta Advertising</h3>
+
+          <ul class="professional-list">
+            <li>Meta Ads Campaign Setup</li>
+            <li>Facebook & Instagram Advertising</li>
+            <li>Audience Targeting</li>
+            <li>Ad Creative Development</li>
+            <li>Campaign Management</li>
+          </ul>
+
+        </div>
+
+        <!-- SERVICE 3 -->
+
+        <div class="service-card">
+
+          <span class="service-number">03 / CREATIVE</span>
+
+          <h3>Design & Content Creation</h3>
+
+          <ul class="professional-list">
+            <li>Social Media Post Design</li>
+            <li>Brand Identity & Visual Design</li>
+            <li>Promotional Graphics</li>
+            <li>Reels & Short-Form Video Creation</li>
+            <li>Content Concepts & Storyboarding</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS & EXPERTISE -->
+
+    <section id="skills">
+
+      <h2>Skills & Expertise</h2>
+
+      <p class="section-intro">
+        A combination of marketing, creative and technical
+        skills that support my work across digital platforms.
+      </p>
+
+      <div class="skills-grid">
+
+        <!-- SKILL GROUP 1 -->
+
+        <div class="skill-card">
+
+          <h3>Social Media & Marketing</h3>
+
+          <ul class="professional-list">
+            <li>Social Media Strategy</li>
+            <li>Content Planning</li>
+            <li>Brand Page Management</li>
+            <li>Meta Ads Campaign Management</li>
+            <li>Audience Targeting</li>
+            <li>Digital Campaign Planning</li>
+          </ul>
+
+        </div>
+
+        <!-- SKILL GROUP 2 -->
+
+        <div class="skill-card">
+
+          <h3>Creative & Design</h3>
+
+          <ul class="professional-list">
+            <li>Graphic Design</li>
+            <li>Brand Identity Development</li>
+            <li>Typography & Color Selection</li>
+            <li>Visual Content Creation</li>
+            <li>Social Media Creative Design</li>
+            <li>Promotional Design</li>
+          </ul>
+
+        </div>
+
+        <!-- SKILL GROUP 3 -->
+
+        <div class="skill-card">
+
+          <h3>Video & Content Creation</h3>
+
+          <ul class="professional-list">
+            <li>Reel Concept Development</li>
+            <li>Short-Form Video Creation</li>
+            <li>Storyboarding</li>
+            <li>Visual Storytelling</li>
+            <li>Content Direction</li>
+          </ul>
+
+        </div>
+
+        <!-- SKILL GROUP 4 -->
+
+        <div class="skill-card">
+
+          <h3>Technical Skills</h3>
+
+          <ul class="professional-list">
+            <li>Computer Science Fundamentals</li>
+            <li>HTML & CSS</li>
+            <li>Website Customization</li>
+            <li>Responsive Web Design Fundamentals</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- INDUSTRIES -->
+
+    <section id="industries">
+
+      <h2>Industries I Work With</h2>
+
+      <p class="section-intro">
+        I enjoy working with businesses and brands that
+        want to strengthen their digital presence through
+        creative content and effective social media marketing.
+      </p>
+
+      <div class="industries-grid">
+
+        <div class="industry-card">
+
+          <h3>Healthcare</h3>
+
+          <p>
+            Professional digital content and social media
+            communication for healthcare brands.
+          </p>
+
+        </div>
+
+        <div class="industry-card">
+
+          <h3>Education</h3>
+
+          <p>
+            Creative social media content and digital
+            communication for educational institutions.
+          </p>
+
+        </div>
+
+        <div class="industry-card">
+
+          <h3>Local Businesses</h3>
+
+          <p>
+            Brand-focused content and digital marketing
+            to help local businesses build their presence.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SELECTED WORK -->
+
     <section id="work">
+
       <h2>Selected Work</h2>
 
-      <p>
-        Explore my creative projects, social media campaigns,
-        branding work and digital marketing experience.
+      <p class="section-intro">
+        Explore selected branding projects, social media
+        campaigns, creative content and digital marketing work.
       </p>
+
+
+      <!-- FEATURED RGOH PROJECT -->
+
+      <div class="featured-project">
+
+        <span class="project-category">
+          HEALTHCARE · SOCIAL MEDIA · CREATIVE CONTENT
+        </span>
+
+        <h3>RGOH — Ramzan Gynecology & Obstetrics Hospital</h3>
+
+        <p>
+          A healthcare branding and digital content project
+          focused on building a professional and consistent
+          online presence for a gynecology and obstetrics hospital.
+        </p>
+
+        <div class="project-tags">
+          <span>Social Media Management</span>
+          <span>Healthcare Content</span>
+          <span>Creative Design</span>
+          <span>Reels & Video</span>
+        </div>
+
+      </div>
+
+
+      <!-- GOOD WILL PROJECT -->
 
       <a href="projects/good-will.html" class="project-card">
 
         <div class="project-image">
+
           <img
             src="assets/projects/good-will/brand-identity.png"
             alt="Good Will Uniform Center brand identity presentation"
           >
+
         </div>
 
         <div class="project-info">
+
           <span class="project-category">
             BRANDING & DIGITAL MARKETING
           </span>
@@ -230,38 +683,45 @@
           <span class="project-link">
             Explore Case Study →
           </span>
+
         </div>
 
       </a>
+
     </section>
 
-    <section id="services">
-      <h2>What I Do</h2>
 
-      <p>
-        Social Media Management · Page Setup · Graphic Design
-        · Content Creation · Digital Marketing
-      </p>
-    </section>
+    <!-- CONTACT -->
 
     <section id="contact">
+
       <h2>Let's Work Together</h2>
 
       <p>
         Have a project in mind? Let's connect and create
-        something meaningful.
+        something meaningful for your brand.
       </p>
 
       <a href="mailto:nimrazaheer2603@gmail.com">
         Email Me
       </a>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 Nimra Zaheer. All rights reserved.</p>
+
+    <p>
+      © 2026 Nimra Zaheer. All rights reserved.
+    </p>
+
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
